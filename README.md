@@ -1,6 +1,6 @@
 This is a data pipeline using sample retail orders from Snowflake. We will be using Docker along with dbt for transformation and Airflow for orchestration of our DAG. 
 
-We will create some staging tables using the source table. One of the staing tables will use a generated surrogate key. 
+We will create some staging tables using the source table. One of the staging tables will use a generated surrogate key. 
 
 Then we will create some downstream fact tables in our data mart to transform the data, using macros and referencing some dimensional models. 
 
@@ -38,7 +38,7 @@ create role if not exists dbt_role;
 
 show grants on warehouse dbt_wh;
 
-grant role dbt_role to user jayzern;
+grant role dbt_role to user {your username here};
 grant usage on warehouse dbt_wh to role dbt_role;
 grant all on database dbt_db to role dbt_role;
 
